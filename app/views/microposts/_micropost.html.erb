@@ -1,6 +1,9 @@
 <li id="micropost-<%= micropost.id %>">
  
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="user">
+    <%= link_to micropost.user.name, micropost.user %>
+  </span>
+  
   <span class="content">
     <%= micropost.content %>
   </span>
@@ -20,6 +23,13 @@
     <% end %>
     
   </span>
+  </br>
+  <spa>
+   <%= link_to "upvote", like_micropost_path(micropost), method: :put %>
+  </spa>
+  <spa>
+   <%= micropost.get_upvotes.size %>
+  </spa>
   
   
 </li>

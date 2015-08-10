@@ -20,6 +20,14 @@ class MicropostsController < ApplicationController
   end
   
   
+  
+  def upvote
+    @micropost = Micropost.find(params[:id])
+    @micropost.upvote_by current_user
+    redirect_to root_url
+  end
+  
+  
    private
    
    
