@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   match '/logout', to: 'sessions#destroy',     via: 'delete'
   
   root to: 'static_pages#home'
+  
+  resources :microposts,          only: [:create, :destroy]
 end
