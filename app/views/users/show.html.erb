@@ -6,6 +6,12 @@
         <%= @user.name %>
       </h1>
     </section>
+    
+    <section>
+      <%= render 'shared/stats' %>
+      <%= render 'follow_form' if logged_in? %>
+    </section>
+    
   </aside>
   
   
@@ -18,6 +24,5 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div>
-  
   
 </div>

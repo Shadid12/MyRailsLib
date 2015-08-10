@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
+   resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   
   match '/signup',  to: 'users#new',            via: 'get'
   
@@ -15,4 +19,6 @@ Rails.application.routes.draw do
       put "dislike", to: "microposts#downvote"
     end
   end
+  
+  resources :relationships,       only: [:create, :destroy]
 end
