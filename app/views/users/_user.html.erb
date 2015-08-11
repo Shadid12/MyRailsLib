@@ -1,6 +1,7 @@
-<%= link_to user.name, user %>
+<%= link_to user.name, user, :class => 'post post--preview-link staff' %>
 
 <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
 <% end %>
+

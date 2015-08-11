@@ -3,7 +3,27 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @user.name %>
+        
+        <!--THE PICTURE AND NAME -->
+        
+        
+            <a class="post post--preview-link staff">  
+              <div class="row">
+                <div class="one-column col-xs-6 col-md-7 col-lg-6">
+                  <div class="image-container image-container--max image--border-hover">
+                    <%= image_tag @user.avatar.url(:medium) %>
+                  </div>
+                </div>
+                
+                <div class="one-column col-xs-6 col-md-5 col-lg-6">
+                  <%= @user.name %>
+                </div>
+              </div>
+            </a>
+            
+            
+          <!--HELLO HELLO ITS DONE  -->
+            
       </h1>
     </section>
     
