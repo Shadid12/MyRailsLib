@@ -55,4 +55,9 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
   
+  def self.search(query)
+    where("name like ?", "%#{query}%") 
+  end
+  
+  
 end

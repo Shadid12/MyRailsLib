@@ -18,6 +18,13 @@
     				        	<li class="z-nav__item">
     				        		<%= link_to "Sign out", logout_path, method: "delete", :class => 'z-nav__link z-nav__link--simple current-position' %>
     				        		<%= link_to "All People", users_path, :class => 'z-nav__link z-nav__link--simple current-position' %>
+    				        		
+    				        		
+    				        		<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+									  <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+									  <%= submit_tag "Search", :name => nil %>
+									<% end %>
+    				        		
     				        	</li>
                   		  <% else %>
     				        	<li class="z-nav__item">
@@ -28,8 +35,12 @@
 
 				        </ul>
 				        
+				        
+				        
 				    </nav>
 	<!-- end navigation section -->
 </div>
 </div>
+
+
 
