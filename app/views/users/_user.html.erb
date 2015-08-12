@@ -1,4 +1,7 @@
-<%= link_to user.name, user, :class => 'post post--preview-link staff' %>
+<div>
+    <%= image_tag user.avatar.url(:medium), :class => 'avatar' %>
+    <%= link_to user.name, user %>
+</div>
 
 <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

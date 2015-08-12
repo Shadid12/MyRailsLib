@@ -17,6 +17,7 @@
 				          <% if logged_in? %>
     				        	<li class="z-nav__item">
     				        		<%= link_to "Sign out", logout_path, method: "delete", :class => 'z-nav__link z-nav__link--simple current-position' %>
+    				        		<%= link_to "All People", users_path, :class => 'z-nav__link z-nav__link--simple current-position' %>
     				        	</li>
                   		  <% else %>
     				        	<li class="z-nav__item">

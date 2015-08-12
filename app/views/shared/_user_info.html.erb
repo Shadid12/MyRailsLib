@@ -1,10 +1,29 @@
  <a class="post post--preview-link staff">  
     <h1>
-            <%= image_tag current_user.avatar.url(:medium) %>
-            <%= current_user.name %>
-
         
-    </h1>
+        <!--THE PICTURE AND NAME -->
+        
+        
+            <a class="post post--preview-link staff">  
+              <div class="row">
+                <div class="one-column col-xs-6 col-md-7 col-lg-6">
+                  <div class="image-container image-container--max image--border-hover">
+                    <%= image_tag current_user.avatar.url(:medium), class: 'avatar' %>
+                    </br>
+                    <%= current_user.name %>
+                  </div>
+                </div>
+                
+                
+              </div>
+            </a>
+            
+            
+            
+            
+          <!--HELLO HELLO ITS DONE  -->
+            
+      </h1>
  </a>
 
 <span><%= link_to "view my profile", current_user %></span>
