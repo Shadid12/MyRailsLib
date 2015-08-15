@@ -30,6 +30,10 @@
     </section>
     
     <section>
+      <%= link_to "Edit Profile", edit_user_path %>  
+    </section>
+    
+    <section>
       <%= render 'shared/stats' %>
       <%= render 'follow_form' if logged_in? %>
     </section>
