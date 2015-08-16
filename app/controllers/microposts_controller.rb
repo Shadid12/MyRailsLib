@@ -27,6 +27,9 @@ class MicropostsController < ApplicationController
     redirect_to root_url
   end
   
+  def show
+    @micropost = Micropost.find(params[:id])
+  end
   
    private
    

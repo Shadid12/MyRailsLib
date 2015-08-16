@@ -32,4 +32,14 @@
   </spa>
   
   
+  <%= render :partial => micropost.comments %>
+  
+  <%= simple_form_for [micropost, Comment.new] do |f| %>
+  <div >
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+    <%= f.submit "Add Comment", class: "btn btn-primary" %>
+  <% end %>
+  
 </li>

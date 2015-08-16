@@ -1,0 +1,13 @@
+<%= div_for(comment) do %>
+	<div >
+		
+			<%= comment.body %>
+			<small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= comment.user.name %></small>
+			
+			 <% if current_user?(comment.user) %>
+                <%= link_to 'Destroy', 
+                micropost_comment_path(micropost_id:comment.micropost_id, id:comment.id), 
+                method: :delete, data: { confirm: 'Are you sure?' } %>
+             <% end %>
+	</div>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
    resources :users do
     member do
       get :following, :followers
@@ -13,11 +14,13 @@ Rails.application.routes.draw do
   
   root to: 'static_pages#home'
   
-  resources :microposts,          only: [:create, :destroy] do
+  resources :microposts,          only: [:create, :destroy, :show] do
     member do
       put "like", to: "microposts#upvote"
       put "dislike", to: "microposts#downvote"
     end
+    
+    resources :comments
   end
   
   resources :relationships,       only: [:create, :destroy]
